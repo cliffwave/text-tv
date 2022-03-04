@@ -1,8 +1,9 @@
 html {
     font-family: 'Press Start 2P', monospace;
-    color:whitesmoke;
+    color: #fff;
     background-color: #000;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 * {
@@ -14,6 +15,15 @@ ul {
     list-style-type: none;
 }
 
+img {
+    position: relative;
+    display: block;
+    top: -271px;
+    left: 5px;
+    width: 31%;
+    height: auto;
+}
+
 .link {
     color: #fff;
     text-decoration:none;
@@ -21,16 +31,16 @@ ul {
 }
 
 .link:hover {
-    color: #666;
+    color: #666666;
 }
 
 .centered {
     display: inline;
     position: relative;
-    left: 9.5%;
+    left: 10%;
 }
 
-.container { /*all box0, box1 and so on are "inside" this contianer*/
+.container {
     position: relative;
     display: block;
     margin-left: auto;
@@ -58,9 +68,10 @@ ul {
     background: #0000ff;
 }
 
+
 .box2 {
-    position: absolute;
-    top: 115px;
+    position: relative;
+    top: 35px;
     width: 990px;
     height: 25px;
     color: #0000ff;
@@ -79,7 +90,7 @@ ul {
     width: 990px;
     height: 145px;
     color: #0000ff;
-    background: #00ff00;
+    background-color: #00ffff;
     font-size: 24px;
 }
 
@@ -135,15 +146,10 @@ ul {
 #box3One {
     position: relative;
     top: 70px;
-    left: 5px;
+    left: 350px;
     line-height: 130%;
     font-size: 100%;
     transform: scaleY(1.45);
-}
-
-#box3Two {
-  font-size: 79%;
-  color: #00ffff
 }
 
 #box4One {
@@ -159,7 +165,7 @@ ul {
     display: inline-table;
     position: relative;
     top: 27px;
-    left: 75px;
+    left: 130px;
     transform: scale(1.05, 1.18);
     line-height: 110%;
 }
@@ -191,17 +197,45 @@ ul {
     line-height: 110%;
 }
 
-#bottomText {
-    position: absolute;
-    line-height: 130%;
-    font-size: 105%;
-    transform: scaleY(1.45);
-    font-size: 24px;
-    text-align: center;
-    padding-top: 2rem;
+#smallerText {
+    position: relative;
+    bottom: 50px;
+    left: 70px;
+    width: 490px;
+    font-size: 85%;
 }
 
-@media screen and (max-width: 900px) {
+/*
+.rotate:hover {
+    animation: rotation 8s linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+*/
+
+.rotate{
+    transition: transform 1s;
+    -moz-transition: transform 1s;
+    -webkit-transition: transform 1s;
+    z-index: 998;
+}
+
+.rotate:hover{
+    transform: rotate(20deg);
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    z-index: 998;
+}
+
+  @media (max-width: 900px) {
 
     .alert {
         position: fixed;
@@ -215,14 +249,9 @@ ul {
         z-index: 999;
         opacity: 1;
     }
-
-    * {
-        overflow-y: hidden;
-    }
-
 }
 
-@media screen and (min-width: 901px) {
+@media (min-width: 901px) {
 
     .alert {
         visibility: hidden;
